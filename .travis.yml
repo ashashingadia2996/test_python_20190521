@@ -1,0 +1,17 @@
+language: python
+matrix:
+  include:
+  - python: 2.7
+    env: TOXENV=py27
+  - python: 3.3
+    env: TOXENV=py33
+  - python: 3.4
+    env: TOXENV=py34
+install:
+- if [[ $TRAVIS_PYTHON_VERSION == 3.3 ]]; then pip install virtualenv==15.2.0 tox==3.1.3;
+  fi
+- pip install tox
+script: tox
+env:
+  global:
+    secure: 0pR8TsJ6YVToc5g5zMhKvmIvBohiI5JgeYNcCIvDiFDw3er1xXp6B7KuMglAu97dAolsawcGT3wLLoLkhrOgzt0snwenZT4BMwFr3ulHsmNJis/YrfBDInXG20bjX7LllM+4NXQfQmp7gaMd5UF70B98XpRrXtcdaysclICI3kx68i3CtnUVxuhf+7lTxUB+a4Kxuwgp+IA+ww8axN9Gc7T0mw9oDHUv+UaBxc62aovlws++wxL7d+iYMJr9V6gVY+ZyBpz378a2nk9uBq/+oCv29oCkBYGHKvFnXh192uN+LAZ8ykGBgVfG7IqdrLu5S5f/ReNjYYT43Tl27+jOsv5ykjyG6Q37mWF6RYretrGiCDCOkQ2yf0JKaQrKURqwgGXIVEB3kLsE7h2gx9u1qZU8FjmckZF77MAriasR6WhFtieZVFWPAz1eChYI/CtDmjK8SIJFY0ljfeX6XXtjNC7BNp2quI8uG/BSFBlouqN3S/gLGz4G289g/CLoeF18leqPFT9GD2yGHElukH7JVRuEr8erboWpes8U586/JbLFDCZQK//SYuFHXx5JU8iGRdSbqxWEwg89WFPArQ7ND0TsBYgqmxSjGr/3xxQ7Al7xV7TR7C4h5p2Q/mFfRfsigkRaz+ulCxBsamAUuxFiwxvwgJOAMcTXpWe5eAXE7Aw=
