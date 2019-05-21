@@ -32,7 +32,7 @@ def test_VerifySafeToSendEmail():
 	assert 'valid' == response.body['result']
 	assert 'accepted_email' == response.body['reason']
 	assert 'false' == response.body['disposable']
-	assert 'true' == response.body['accept_all']
+	assert 'false' == response.body['accept_all']
 	assert 'false' == response.body['role']
 	assert 'false' == response.body['free']
 	assert 'safe-to-send@example.com' == response.body['email']
